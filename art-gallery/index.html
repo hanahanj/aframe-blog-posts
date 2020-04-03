@@ -1,101 +1,130 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Art Gallery - A-Frame</title>
-    <meta name="description" content="Art Gallery - A-Frame">
-    <script src="https://aframe.io/releases/0.3.0/aframe.min.js"></script>
-    <script src="https://unpkg.com/aframe-teleport-controls@0.1.0/dist/aframe-teleport-controls.min.js"></script>
-      <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-<div class="menu">
-  <div class="menuItem" id="title">
-    <h1>Edgelands</h1>
-  </div>
-  <div class="menuItem" id="info">
-    <h1>Info</h1>
+<head>
+  <meta charset="utf-8">
+  <title>Edgelands</title>
+  <meta name="description" content="Art Gallery - A-Frame">
+  <script src="https://aframe.io/releases/0.3.0/aframe.min.js"></script>
+  <script src="https://unpkg.com/aframe-teleport-controls@0.1.0/dist/aframe-teleport-controls.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-latest.js"></script>
+  <script src="script.js"></script>
+</head>
+<body>
+  <div class="menuContain toggle">
+    <div class="menu">
+      <div class="open">
+        <div class="bars">
+          <div id="bar1"></div>
+          <div id="bar2"></div>
+        </div>
+
+      </div>
+      <div class="menuItem" id="title">
+        <h1>Edgelands</h1>
+      </div>
+
+      <div class="close">
+        <div class="bars">
+          <div id="bar1"></div>
+          <div id="bar2"></div>
+        </div>
+
+     <!--  <div class="dropdown">
+        <a href="#" title="" class="btn btn-primary toggle">Toggle menu</a>
+        <ul class="dropdown-menu list-group">
+          <li class="list-group-item">List item 1</li>
+          <li class="list-group-item">List item 2</li>
+          <li class="list-group-item">List item 3</li>
+        </ul>
+      </div>  
+    </div> -->
+  <!-- <div class="menuItem" id="info">
+    <h1>Info</h1> -->
   </div>
 </div>
+</div>
 
-    <a-scene>
-      <a-assets>
-        <img src="assets/floor.jpg" id="floor">
-       <!--  <img src="assets/wall.jpg" id="wall"> -->
-        <img src="assets/ceiling.jpg" id="ceiling">
 
-        <!-- https://squadcards.wordpress.com/ -->
-        <img src="assets/Horizon_001.jpeg" id="Horizon_001">
-        <img src="assets/Horizon_002.jpeg" id="Horizon_002">
-        <img src="assets/Horizon_003.jpeg" id="Horizon_003">
-        <img src="assets/Horizon_004.jpeg" id="Horizon_004">
-        <img src="assets/Horizon_005.jpeg" id="Horizon_005">
-        <img src="assets/Horizon_006.jpeg" id="Horizon_006">
-        <img src="assets/Horizon_007.jpeg" id="Horizon_007">
-        <img src="assets/Horizon_008.jpeg" id="Horizon_008">
-        <img src="assets/Horizon_009.jpeg" id="Horizon_009">
-        <img src="assets/Horizon_010.jpeg" id="Horizon_010">
-        <img src="assets/wild-side.png" id="wild-side">
-        <img src="assets/thor.png" id="thor">
 
-      </a-assets>
+<a-scene>
+  <a-assets>
+    <img src="assets/floor.jpg" id="floor">
+    <!--  <img src="assets/wall.jpg" id="wall"> -->
+    <img src="assets/ceiling.jpg" id="ceiling">
 
-      <a-entity id="left-hand"
+    <!-- https://squadcards.wordpress.com/ -->
+    <img src="assets/Horizon_001.jpeg" id="Horizon_001">
+    <img src="assets/Horizon_002.jpeg" id="Horizon_002">
+    <img src="assets/Horizon_003.jpeg" id="Horizon_003">
+    <img src="assets/Horizon_004.jpeg" id="Horizon_004">
+    <img src="assets/Horizon_005.jpeg" id="Horizon_005">
+    <img src="assets/Horizon_006.jpeg" id="Horizon_006">
+    <img src="assets/Horizon_007.jpeg" id="Horizon_007">
+    <img src="assets/Horizon_008.jpeg" id="Horizon_008">
+    <img src="assets/Horizon_009.jpeg" id="Horizon_009">
+    <img src="assets/Horizon_010.jpeg" id="Horizon_010">
+    <img src="assets/wild-side.png" id="wild-side">
+    <img src="assets/thor.png" id="thor">
+
+  </a-assets>
+
+  <a-entity id="left-hand"
   brush
   paint-controls="hand: left"
   ui
   teleport-controls>
 </a-entity>
 <a-entity id="right-hand"
-  brush
-  paint-controls="hand: right"
-  ui
-  teleport-controls>
+brush
+paint-controls="hand: right"
+ui
+teleport-controls>
 </a-entity>
 
-      <!-- Floor -->
-      <a-box depth="40" height="0.1" width="40" position="0 0 0" rotation="0 90 0" material="src: #floor; repeat: 8 8" opacity=".2"></a-box>
+<!-- Floor -->
+<a-box depth="40" height="0.1" width="40" position="0 0 0" rotation="0 90 0" material="src: #floor; repeat: 8 8" opacity=".2"></a-box>
 
-      <!-- Ceiling -->
-      <a-box depth="40" height="0.1" width="40" position="0 20 0" rotation="0 90 0" material="side: double; src: #ceiling; repeat: 8 8"  opacity=".2"></a-box>
+<!-- Ceiling -->
+<a-box depth="40" height="0.1" width="40" position="0 20 0" rotation="0 90 0" material="side: double; src: #ceiling; repeat: 8 8"  opacity=".2"></a-box>
 
-      <!-- Exterior Wall -->
-      <a-box depth="40" height="20" width="40" position="0 10 0" rotation="0 0 0" material="side: double; src: #wall; repeat: 2 2"></a-box>
+<!-- Exterior Wall -->
+<a-box depth="40" height="20" width="40" position="0 10 0" rotation="0 0 0" material="side: double; src: #wall; repeat: 2 2"></a-box>
 
-      <!-- Picture on front Wall -->
+<!-- Picture on front Wall -->
 
-      <a-link href="index.html" image="#thumbHome" title="my home"></a-link>
+<a-link href="index.html" image="#thumbHome" title="my home"></a-link>
 
-      <a-box depth=".25" height="5" width="5" material="src: #Horizon_001;" position="11.2 4.5 -19.95"></a-box>
-      <a-link href="https://www.hanahan.works" title="My Homepage"><a-plane Title height="5" width="10" color="white" position="0 4.5 -19.95"></a-link>
-        <a-text ></a-text>
-      </a-plane>
-      <a-box depth=".25" height="5" width="5" material="src: #Horizon_002;" position="-11.2 4.5 -19.95"></a-box>
+<a-box depth=".25" height="5" width="5" material="src: #Horizon_001;" position="11.2 4.5 -19.95"></a-box>
+<a-link href="https://www.hanahan.works" title="My Homepage"><a-plane Title height="5" width="10" color="white" position="0 4.5 -19.95"></a-link>
+  <a-text ></a-text>
+</a-plane>
+<a-box depth=".25" height="5" width="5" material="src: #Horizon_002;" position="-11.2 4.5 -19.95"></a-box>
 
-      <!-- Picture on back Wall -->
-      <a-box depth=".25" height="5" width="5" material="src: #Horizon_003;" position="11.2 4.5 19.95" rotation="0 180 0"></a-box>
-      <a-plane height="6" width="3" color="black" position="0 2 19.95" rotation="0 180 0">
-      </a-plane>
-      <a-box depth=".25" height="5" width="5" material="src: #Horizon_004;" position="-11.2 4.5 19.95" rotation="0 180 0"></a-box>
+<!-- Picture on back Wall -->
+<a-box depth=".25" height="5" width="5" material="src: #Horizon_003;" position="11.2 4.5 19.95" rotation="0 180 0"></a-box>
+<a-plane height="6" width="3" color="black" position="0 2 19.95" rotation="0 180 0">
+</a-plane>
+<a-box depth=".25" height="5" width="5" material="src: #Horizon_004;" position="-11.2 4.5 19.95" rotation="0 180 0"></a-box>
 
-      <!-- Picture on right Wall -->
-      <a-box depth=".25" height="5" width="5" material="src: #Horizon_005;" position="19.95 4.5 11.2" rotation ="0 -90 0"></a-box>
-      <a-box depth=".25" height="5" width="5" material="src: #Horizon_006;" position="19.95 4.5 0" rotation ="0 -90 0">
-      </a-box>
-      <a-box depth=".25" height="5" width="5" material="src: #Horizon_007;" position="19.95 4.5 -11.2" rotation ="0 -90 0"></a-box>
+<!-- Picture on right Wall -->
+<a-box depth=".25" height="5" width="5" material="src: #Horizon_005;" position="19.95 4.5 11.2" rotation ="0 -90 0"></a-box>
+<a-box depth=".25" height="5" width="5" material="src: #Horizon_006;" position="19.95 4.5 0" rotation ="0 -90 0">
+</a-box>
+<a-box depth=".25" height="5" width="5" material="src: #Horizon_007;" position="19.95 4.5 -11.2" rotation ="0 -90 0"></a-box>
 
-      <!-- Picture on left Wall -->
-      <a-box depth=".25" depth=".25" height="5" width="5" material="src: #Horizon_008;" position="-19.95 4.5 11.2" rotation="0 90 0"></a-box>
-      <a-box depth=".25"  height="5" width="5" material="src: #Horizon_009;" position="-19.95 4.5 0" rotation="0 90 0">
-      </a-box>
-      <a-box depth=".25" height="5" width="5" material="src: #Horizon_010;" position="-19.95 4.5 -11.2" rotation="0 90 0"></a-box>
+<!-- Picture on left Wall -->
+<a-box depth=".25" depth=".25" height="5" width="5" material="src: #Horizon_008;" position="-19.95 4.5 11.2" rotation="0 90 0"></a-box>
+<a-box depth=".25"  height="5" width="5" material="src: #Horizon_009;" position="-19.95 4.5 0" rotation="0 90 0">
+</a-box>
+<a-box depth=".25" height="5" width="5" material="src: #Horizon_010;" position="-19.95 4.5 -11.2" rotation="0 90 0"></a-box>
 
-      <a-camera>
-    <a-cursor>
-    </a-cursor>
-  </a-camera>
+<a-camera>
+  <a-cursor>
+  </a-cursor>
+</a-camera>
 
-    </a-scene>
+</a-scene>
 
-  </body>
+</body>
 </html>
